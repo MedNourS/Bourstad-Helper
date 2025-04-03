@@ -38,14 +38,8 @@ Bourstad-Helper is a tool designed to assist users in analyzing and managing sto
    pip install -r requirements.txt
    ```
 
-2. Run the tool:
+2. Run the Streamlit app:
 
    ```bash
-   python main.py --action view_stocks
-   ```
-
-3. Get recommendations:
-
-   ```bash
-   python main.py --action get_recommendations
+   streamlit run bourstad/dashboard.py
    ```

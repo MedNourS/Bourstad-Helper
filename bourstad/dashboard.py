@@ -36,7 +36,7 @@ def fetch_highlights_data(symbols, selected_date):
     Returns:
         DataFrame: Highlights data for the selected date.
     """
-    cache_file = os.path.join(CACHE_DIR, f"highlights_{selected_date}.json")
+    cache_file = os.path.join(CACHE_DIR, f"highlights_{selected_date.strftime('%Y-%m-%d')}.json")
 
     # Check if data is already cached
     if os.path.exists(cache_file):
@@ -50,7 +50,6 @@ def fetch_highlights_data(symbols, selected_date):
             formatted_symbol = map_bourstad_to_yfinance(symbol)
             stock = yf.Ticker(formatted_symbol)
             history = stock.history(start=selected_date, end=selected_date + pd.Timedelta(days=1))
-
             if not history.empty:
                 row = {
                     "Symbol": symbol,
@@ -103,21 +102,50 @@ def filter_valid_symbols(symbols):
             valid_symbols.append(mapped_symbol)
     return valid_symbols
 
-# Fetch securities from Bourstad
+# Fetch securities from Bourstad or load from a local file if login is not available
 def get_bourstad_securities():
-    stocks, _, _ = fetch_and_parse_stocks()
+    """
+    Fetch securities from Bourstad or load from a local file if login is not available.
+    Returns:
+        DataFrame: DataFrame containing stock data.
+    """
+    try:
+        # Attempt to fetch stocks using login credentials
+        email = os.getenv('BOURSTAD_USERNAME')
+        password = os.getenv('BOURSTAD_PASSWORD')
+        if email and password:
+            stocks, _, _ = fetch_and_parse_stocks(email, password)
+        else:
+            raise ValueError("No login credentials provided. Falling back to local data.")
+
+    except Exception as e:
+        print(f"Error fetching stocks: {e}")
+        # Fallback: Load stocks from a local file
+        stocks = []
+        extracted_stocks_file = "data/extracted_stocks.txt"
+        if os.path.exists(extracted_stocks_file):
+            with open(extracted_stocks_file, "r", encoding="utf-8") as file:
+                for line in file:
+                    parts = line.split(", ")
+                    if len(parts) > 1 and "ID: " in parts[0]:
+                        stock_id = parts[0].replace("ID: ", "").strip()
+                        stock_name = parts[1].replace("Name: ", "").strip()
+                        if stock_id:  # Skip empty or invalid symbols
+                            stocks.append({"id": stock_id, "name": stock_name})
+        else:
+            print(f"Local stock data file '{extracted_stocks_file}' not found.")
+
     # Remove the 0th symbol (nonexistent)
     stocks = [stock for stock in stocks if stock['id'] and stock['id'] != ""]
     return pd.DataFrame(stocks)
 
 # Fetch real-time stock data
-def fetch_stock_data(symbol, stocks_df, delay=0.075):
+def fetch_stock_data(symbol, stocks_df):
     """
-    Fetch real-time stock data with caching and rate limiting.
+    Fetch real-time stock data with caching.
     Args:
         symbol (str): The stock symbol to fetch.
         stocks_df (DataFrame): DataFrame containing stock data.
-        delay (int): Delay in seconds between API calls to avoid rate limiting.
     Returns:
         dict: Real-time stock data.
     """
@@ -131,9 +159,6 @@ def fetch_stock_data(symbol, stocks_df, delay=0.075):
         # Ensure the data is valid
         if not info or "currentPrice" not in info or info["currentPrice"] is None:
             raise ValueError(f"No valid data for {formatted_symbol}")
-
-        # Rate limiting: Pause between API calls
-        time.sleep(delay)
 
         return {
             "Symbol": symbol,  # Keep the original symbol for reference
@@ -158,7 +183,7 @@ def fetch_stock_data(symbol, stocks_df, delay=0.075):
             "Dividend Yield": 0,  # Default to 0 if missing
         }
 
-def fetch_batch_stock_data(symbols, stocks_df, delay=1):
+def fetch_batch_stock_data(symbols, stocks_df, delay=0.05):
     """
     Fetch real-time stock data for a batch of symbols.
     Args:
@@ -170,7 +195,7 @@ def fetch_batch_stock_data(symbols, stocks_df, delay=1):
     """
     real_time_data = []
     for symbol in symbols:
-        stock_data = fetch_stock_data(symbol, stocks_df, delay=delay)
+        stock_data = fetch_stock_data(symbol, stocks_df)
         if stock_data["Current Price"] != "N/A":  # Only include valid data
             real_time_data.append(stock_data)
     return real_time_data
@@ -187,15 +212,15 @@ def generate_recommendation(real_time_data):
 
     # Calculate recommendation based on proximity to 52-week high/low
     if current_price <= low_52_week * 1.1:
-        return "Strong Buy", 10
+        return "Strong Buy", 100
     elif current_price <= low_52_week * 1.2:
-        return "Buy", 30
+        return "Buy", 75
     elif current_price >= high_52_week * 0.9:
-        return "Strong Sell", 90
+        return "Strong Sell", 0
     elif current_price >= high_52_week * 0.8:
-        return "Sell", 70
+        return "Sell", 25
     else:
-        return "Neutral", 50
+        return "Hold", 50
 
 # Analyze stocks and generate recommendations
 def analyze_stocks(stock_data):
@@ -314,6 +339,28 @@ with tabs[0]:
         st.subheader(f"Historical Price Chart for {selected_security} ({time_period})")
         st.line_chart(historical_data['Close'])
 
+        # Add the recommendation slider with color gradient
+        st.subheader("Recommendation Slider")
+        recommendation, score = generate_recommendation(real_time_data)
+
+        # Map recommendation score to slider position
+        slider_position = {
+            "Strong Buy": 100,
+            "Buy": 75,
+            "Hold": 50,
+            "Sell": 25,
+            "Strong Sell": 0
+        }.get(recommendation, 50)  # Default to "Hold" if recommendation is unknown
+
+        # Create a color gradient bar
+        st.markdown(f"""
+        <div style="width: 100%; height: 20px; background: linear-gradient(to right, red, orange, yellow, lightgreen, green); position: relative; border-radius: 5px;">
+            <div style="position: absolute; left: {slider_position}%; top: -5px; transform: translateX(-50%);">
+                <span style="font-size: 16px; font-weight: bold; color: black;">&#x25B2;</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
 # Tab 2: Analysis
 with tabs[1]:
     st.header("Stock Analysis")
@@ -329,10 +376,25 @@ with tabs[1]:
 
             # Analyze owned securities
             st.subheader("Owned Securities Decisions")
+
+            # Generate recommendations for all stocks
             recommendations = analyze_stocks(st.session_state['stocks'])
+
+            # Generate decisions for owned securities
             decisions = analyze_owned_stocks(owned_securities, recommendations)
+
+            # Convert decisions into a DataFrame for better readability
+            decisions_data = []
             for decision in decisions:
-                st.write(f"- {decision}")
+                # Parse the decision string into structured data
+                symbol = decision.split("(")[1].split(")")[0]  # Extract symbol
+                name = decision.split("(")[0].strip()  # Extract name
+                recommendation = decision.split(":")[-1].strip()  # Extract recommendation
+                decisions_data.append({"Symbol": symbol, "Name": name, "Decision": recommendation})
+
+            # Display the decisions as a table
+            decisions_df = pd.DataFrame(decisions_data)
+            st.table(decisions_df)
         else:
             st.write("No owned securities found.")
     else:
@@ -345,6 +407,9 @@ with tabs[1]:
         # Fetch real-time data for all stocks
         stocks_df = pd.DataFrame(st.session_state['stocks'])
         valid_symbols = filter_valid_symbols(stocks_df['id'].tolist())
+        if not valid_symbols:
+            st.write("No valid symbols found.")
+            st.stop()
         real_time_data = fetch_batch_stock_data(valid_symbols, stocks_df)
 
         print("Valid symbols:", valid_symbols)
@@ -391,26 +456,30 @@ with tabs[2]:
     # Fetch historical data for all valid symbols
     stocks_df = pd.DataFrame(st.session_state['stocks'])
     valid_symbols = filter_valid_symbols(stocks_df['id'].tolist())
+    if not valid_symbols:
+        st.write("No valid symbols found.")
+        st.stop()
+
     highlights_df = fetch_highlights_data(valid_symbols, selected_date)
+    if highlights_df.empty:
+        st.write("No highlights data available for the selected date.")
+        st.stop()
 
-    if not highlights_df.empty:
-        # Identify notable changes
-        st.subheader("📈 Largest Gainers")
-        gainers = highlights_df.sort_values(by="Change (%)", ascending=False).head(3)
-        st.dataframe(gainers)
+    # Identify notable changes
+    st.subheader("📈 Largest Gainers")
+    gainers = highlights_df.sort_values(by="Change (%)", ascending=False).head(3)
+    st.dataframe(gainers)
 
-        st.subheader("📉 Largest Losers")
-        losers = highlights_df.sort_values(by="Change (%)", ascending=True).head(3)
-        st.dataframe(losers)
+    st.subheader("📉 Largest Losers")
+    losers = highlights_df.sort_values(by="Change (%)", ascending=True).head(3)
+    st.dataframe(losers)
 
-        st.subheader("🔥 Highest Volume")
-        highest_volume = highlights_df.sort_values(by="Volume", ascending=False).head(3)
-        st.dataframe(highest_volume)
+    st.subheader("🔥 Highest Volume")
+    highest_volume = highlights_df.sort_values(by="Volume", ascending=False).head(3)
+    st.dataframe(highest_volume)
 
-        st.subheader("🎖️ Honorable Mentions")
-        st.write("Stocks with notable performance or activity:")
-        for _, row in highlights_df.iterrows():
-            if abs(row["Change (%)"]) > 5 or row["Volume"] > 1_000_000:
-                st.write(f"- {row['Name']} ({row['Symbol']}): {row['Change (%)']:.2f}% change, Volume: {row['Volume']}")
-    else:
-        st.write("No data available for the selected date.")
+    st.subheader("🎖️ Honorable Mentions")
+    st.write("Stocks with notable performance or activity:")
+    for _, row in highlights_df.iterrows():
+        if abs(row["Change (%)"]) > 5 or row["Volume"] > 1_000_000:
+            st.write(f"- {row['Name']} ({row['Symbol']}): {row['Change (%)']:.2f}% change, Volume: {row['Volume']}")
