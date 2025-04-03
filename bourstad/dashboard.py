@@ -1,102 +1,25 @@
 import streamlit as st
 import pandas as pd
-import yfinance as yf
 import os
 import json
 import time
-from scraper import fetch_and_parse_stocks, fetch_owned_securities
+import yfinance as yf  # Add this import
+from scraper import fetch_and_parse_stocks, fetch_owned_securities, fetch_with_cache, fetch_highlights_data, fetch_stock_data, fetch_batch_stock_data
+from bs4 import BeautifulSoup
+import requests
 
 CACHE_DIR = "cache"
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-def fetch_with_cache(symbol):
-    cache_file = os.path.join(CACHE_DIR, f"{symbol}.json")
-    
-    # Check if data is already cached
-    if os.path.exists(cache_file):
-        with open(cache_file, "r") as file:
-            return json.load(file)
-    
-    # Fetch data from Yahoo Finance
-    stock = yf.Ticker(symbol)
-    info = stock.info
-    
-    # Cache the data
-    with open(cache_file, "w") as file:
-        json.dump(info, file)
-    
-    return info
-
-def fetch_highlights_data(symbols, selected_date):
-    """
-    Fetch and cache highlights data for a specific day.
-    Args:
-        symbols (list): List of stock symbols to fetch.
-        selected_date (datetime): The selected date for highlights.
-    Returns:
-        DataFrame: Highlights data for the selected date.
-    """
-    cache_file = os.path.join(CACHE_DIR, f"highlights_{selected_date.strftime('%Y-%m-%d')}.json")
-
-    # Check if data is already cached
-    if os.path.exists(cache_file):
-        with open(cache_file, "r") as file:
-            return pd.DataFrame(json.load(file))
-
-    # Fetch historical data for all symbols
-    historical_data = []
-    for symbol in symbols:
-        try:
-            formatted_symbol = map_bourstad_to_yfinance(symbol)
-            stock = yf.Ticker(formatted_symbol)
-            history = stock.history(start=selected_date, end=selected_date + pd.Timedelta(days=1))
-            if not history.empty:
-                row = {
-                    "Symbol": symbol,
-                    "Name": stock.info.get("longName", "N/A"),
-                    "Open": history["Open"].iloc[0],
-                    "Close": history["Close"].iloc[0],
-                    "High": history["High"].iloc[0],
-                    "Low": history["Low"].iloc[0],
-                    "Volume": history["Volume"].iloc[0],
-                    "Change (%)": ((history["Close"].iloc[0] - history["Open"].iloc[0]) / history["Open"].iloc[0]) * 100,
-                }
-                historical_data.append(row)
-        except Exception as e:
-            print(f"Failed to fetch historical data for {symbol}: {e}")
-
-    # Cache the data
-    with open(cache_file, "w") as file:
-        json.dump(historical_data, file)
-
-    return pd.DataFrame(historical_data)
-
 # Set the page configuration
 st.set_page_config(page_title="Bourstad Assistant", page_icon="📈")
 
-# Dynamically map Bourstad symbols to yfinance symbols
-def map_bourstad_to_yfinance(symbol):
-    """
-    Map Bourstad symbols to Yahoo Finance-compatible symbols.
-    """
-    if ":" in symbol:
-        base_symbol, suffix = symbol.split(":")
-        # Handle Canadian stocks
-        if suffix == "CA":
-            return f"{base_symbol}.TO"
-        # Handle other suffixes (add more mappings as needed)
-        elif suffix == "EGX":
-            return base_symbol  # Assuming EGX stocks are U.S.-listed
-        else:
-            print(f"Unknown suffix '{suffix}' for symbol '{symbol}'. Skipping.")
-            return None
-    return symbol  # Return unchanged for U.S. stocks or already valid symbols
-
 # Filter valid symbols
 def filter_valid_symbols(symbols):
+    # Use the centralized map_bourstad_to_yfinance function from scraper.py
+    from scraper import map_bourstad_to_yfinance
     valid_symbols = []
     for symbol in symbols:
-        # Map to Yahoo Finance-compatible symbols
         mapped_symbol = map_bourstad_to_yfinance(symbol)
         if mapped_symbol:
             valid_symbols.append(mapped_symbol)
@@ -138,67 +61,6 @@ def get_bourstad_securities():
     # Remove the 0th symbol (nonexistent)
     stocks = [stock for stock in stocks if stock['id'] and stock['id'] != ""]
     return pd.DataFrame(stocks)
-
-# Fetch real-time stock data
-def fetch_stock_data(symbol, stocks_df):
-    """
-    Fetch real-time stock data with caching.
-    Args:
-        symbol (str): The stock symbol to fetch.
-        stocks_df (DataFrame): DataFrame containing stock data.
-    Returns:
-        dict: Real-time stock data.
-    """
-    # Reformat the symbol using the mapping function
-    formatted_symbol = map_bourstad_to_yfinance(symbol)
-
-    try:
-        # Fetch data with caching
-        info = fetch_with_cache(formatted_symbol)
-
-        # Ensure the data is valid
-        if not info or "currentPrice" not in info or info["currentPrice"] is None:
-            raise ValueError(f"No valid data for {formatted_symbol}")
-
-        return {
-            "Symbol": symbol,  # Keep the original symbol for reference
-            "Name": info.get("longName", "N/A"),
-            "Current Price": info.get("currentPrice", "N/A"),
-            "Market Cap": info.get("marketCap", "N/A"),
-            "52-Week High": info.get("fiftyTwoWeekHigh", "N/A"),
-            "52-Week Low": info.get("fiftyTwoWeekLow", "N/A"),
-            "Volume": info.get("volume", "N/A"),
-            "Dividend Yield": info.get("dividendYield", 0),  # Default to 0 if missing
-        }
-    except Exception as e:
-        print(f"Failed to fetch data for {symbol} (formatted as {formatted_symbol}): {e}")
-        return {
-            "Symbol": symbol,
-            "Name": "N/A",
-            "Current Price": "N/A",
-            "Market Cap": "N/A",
-            "52-Week High": "N/A",
-            "52-Week Low": "N/A",
-            "Volume": "N/A",
-            "Dividend Yield": 0,  # Default to 0 if missing
-        }
-
-def fetch_batch_stock_data(symbols, stocks_df, delay=0.05):
-    """
-    Fetch real-time stock data for a batch of symbols.
-    Args:
-        symbols (list): List of stock symbols to fetch.
-        stocks_df (DataFrame): DataFrame containing stock data.
-        delay (int): Delay in seconds between API calls to avoid rate limiting.
-    Returns:
-        list: List of real-time stock data dictionaries.
-    """
-    real_time_data = []
-    for symbol in symbols:
-        stock_data = fetch_stock_data(symbol, stocks_df)
-        if stock_data["Current Price"] != "N/A":  # Only include valid data
-            real_time_data.append(stock_data)
-    return real_time_data
 
 # Generate a recommendation based on real-time data
 def generate_recommendation(real_time_data):
@@ -277,9 +139,73 @@ def analyze_owned_stocks(owned_securities, recommendations):
         decisions.append(f"{owned['Name']} ({symbol}): {recommendation}")
     return decisions
 
+def update_progress(current, total, message):
+    """
+    Update the progress bar and display a message.
+    Args:
+        current (int): Current progress count.
+        total (int): Total progress count.
+        message (str): Message to display alongside the progress bar.
+    """
+    progress_percentage = current / total
+    progress_bar.progress(progress_percentage)
+    progress_text.text(f"{message} ({current}/{total})")
+
+def fetch_stock_details_with_progress(stocks, suid, aut):
+    """
+    Fetch stock details with a progress bar displayed on the dashboard.
+    """
+    base_url = "https://bourstad.cirano.qc.ca/Transaction/Transaction"
+    os.makedirs('data/stocks', exist_ok=True)
+
+    total_stocks = len(stocks)
+    for index, stock in enumerate(stocks):
+        symbol = stock['id']
+        url = f"{base_url}?suid={suid}&aut={aut}&Symbol={symbol}"
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(f"data/stocks/{symbol}.html", 'w', encoding='utf-8') as file:
+                file.write(response.text)
+        # Update the progress bar
+        update_progress(index + 1, total_stocks, "Fetching stock details")
+
+    st.success("Stock details fetched successfully!")
+
+def parse_all_stocks_with_progress(directory):
+    """
+    Parse all stock files with a progress bar displayed on the dashboard.
+    """
+    stocks_dir = directory
+    stock_files = [f for f in os.listdir(stocks_dir) if f.endswith('.html')]
+    total_files = len(stock_files)
+
+    all_stock_details = []
+    for index, filename in enumerate(stock_files):
+        filepath = os.path.join(stocks_dir, filename)
+        with open(filepath, 'r', encoding='utf-8') as file:
+            soup = BeautifulSoup(file, 'html.parser')
+            stock_details = {
+                'symbol': filename.replace('.html', ''),
+                'name': soup.find('h1', class_='stock-name').text.strip() if soup.find('h1', class_='stock-name') else 'N/A',
+                'last_price': soup.find('span', class_='last-price').text.strip() if soup.find('span', class_='last-price') else 'N/A',
+                'market_cap': soup.find('div', class_='market-cap').text.strip() if soup.find('div', class_='market-cap') else 'N/A',
+            }
+            all_stock_details.append(stock_details)
+        # Update the progress bar
+        update_progress(index + 1, total_files, "Parsing stock files")
+
+    with open('detailed_stock_data.json', 'w', encoding='utf-8') as json_file:
+        json.dump(all_stock_details, json_file, indent=4, ensure_ascii=False)
+
+    st.success("Stock files parsed successfully!")
+
 # Streamlit app
 st.title("Bourstad Assistant 📊")
 st.write("Welcome to the Bourstad Assistant! Use the tabs below to explore data and analysis.")
+
+# Initialize a global progress bar
+progress_bar = st.progress(0)  # Initialize the progress bar
+progress_text = st.empty()  # Placeholder for progress text
 
 # Sidebar for login
 if 'suid' not in st.session_state or 'aut' not in st.session_state:
@@ -328,38 +254,45 @@ with tabs[0]:
     if selected_security:
         st.header(f"Real-Time Data for {selected_security}")
         real_time_data = fetch_stock_data(selected_security, securities_df)
-        st.json(real_time_data)
 
-        # Fetch historical data for the selected security
-        time_period = st.selectbox("Select a time period for historical data", ["1d", "5d", "1mo", "6mo", "1y", "5y", "max"])
-        stock = yf.Ticker(selected_security.split(":")[0])  # Extract the symbol for yfinance
-        historical_data = stock.history(period=time_period)
+        if not real_time_data:
+            st.error(f"Failed to fetch real-time data for {selected_security}. Please try again later.")
+        else:
+            st.json(real_time_data)
 
-        # Display the graph
-        st.subheader(f"Historical Price Chart for {selected_security} ({time_period})")
-        st.line_chart(historical_data['Close'])
+            # Fetch historical data for the selected security
+            time_period = st.selectbox("Select a time period for historical data", ["1d", "5d", "1mo", "6mo", "1y", "5y", "max"])
+            stock = yf.Ticker(selected_security.split(":")[0])  # Extract the symbol for yfinance
+            historical_data = stock.history(period=time_period)
 
-        # Add the recommendation slider with color gradient
-        st.subheader("Recommendation Slider")
-        recommendation, score = generate_recommendation(real_time_data)
+            if historical_data.empty:
+                st.warning("No historical data available for the selected time period.")
+            else:
+                # Display the graph
+                st.subheader(f"Historical Price Chart for {selected_security} ({time_period})")
+                st.line_chart(historical_data['Close'])
 
-        # Map recommendation score to slider position
-        slider_position = {
-            "Strong Buy": 100,
-            "Buy": 75,
-            "Hold": 50,
-            "Sell": 25,
-            "Strong Sell": 0
-        }.get(recommendation, 50)  # Default to "Hold" if recommendation is unknown
+            # Add the recommendation slider with color gradient
+            st.subheader("Recommendation Slider")
+            recommendation, score = generate_recommendation(real_time_data)
 
-        # Create a color gradient bar
-        st.markdown(f"""
-        <div style="width: 100%; height: 20px; background: linear-gradient(to right, red, orange, yellow, lightgreen, green); position: relative; border-radius: 5px;">
-            <div style="position: absolute; left: {slider_position}%; top: -5px; transform: translateX(-50%);">
-                <span style="font-size: 16px; font-weight: bold; color: black;">&#x25B2;</span>
+            # Map recommendation score to slider position
+            slider_position = {
+                "Strong Buy": 100,
+                "Buy": 75,
+                "Hold": 50,
+                "Sell": 25,
+                "Strong Sell": 0
+            }.get(recommendation, 50)  # Default to "Hold" if recommendation is unknown
+
+            # Create a color gradient bar
+            st.markdown(f"""
+            <div style="width: 100%; height: 20px; background: linear-gradient(to right, red, orange, yellow, lightgreen, green); position: relative; border-radius: 5px;">
+                <div style="position: absolute; left: {slider_position}%; top: -5px; transform: translateX(-50%);">
+                    <span style="font-size: 16px; font-weight: bold; color: black;">&#x25B2;</span>
+                </div>
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
 # Tab 2: Analysis
 with tabs[1]:
@@ -461,25 +394,35 @@ with tabs[2]:
         st.stop()
 
     highlights_df = fetch_highlights_data(valid_symbols, selected_date)
-    if highlights_df.empty:
+    if highlights_df is None or highlights_df.empty:
         st.write("No highlights data available for the selected date.")
-        st.stop()
+    else:
+        # Identify notable changes
+        st.subheader("📈 Largest Gainers")
+        gainers = highlights_df.sort_values(by="Change (%)", ascending=False).head(3)
+        st.dataframe(gainers)
 
-    # Identify notable changes
-    st.subheader("📈 Largest Gainers")
-    gainers = highlights_df.sort_values(by="Change (%)", ascending=False).head(3)
-    st.dataframe(gainers)
+        st.subheader("📉 Largest Losers")
+        losers = highlights_df.sort_values(by="Change (%)", ascending=True).head(3)
+        st.dataframe(losers)
 
-    st.subheader("📉 Largest Losers")
-    losers = highlights_df.sort_values(by="Change (%)", ascending=True).head(3)
-    st.dataframe(losers)
+        st.subheader("🔥 Highest Volume")
+        highest_volume = highlights_df.sort_values(by="Volume", ascending=False).head(3)
+        st.dataframe(highest_volume)
 
-    st.subheader("🔥 Highest Volume")
-    highest_volume = highlights_df.sort_values(by="Volume", ascending=False).head(3)
-    st.dataframe(highest_volume)
+        st.subheader("🎖️ Honorable Mentions")
+        st.write("Stocks with notable performance or activity:")
+        for _, row in highlights_df.iterrows():
+            if abs(row["Change (%)"]) > 5 or row["Volume"] > 1_000_000:
+                st.write(f"- {row['Name']} ({row['Symbol']}): {row['Change (%)']:.2f}% change, Volume: {row['Volume']}")
 
-    st.subheader("🎖️ Honorable Mentions")
-    st.write("Stocks with notable performance or activity:")
-    for _, row in highlights_df.iterrows():
-        if abs(row["Change (%)"]) > 5 or row["Volume"] > 1_000_000:
-            st.write(f"- {row['Name']} ({row['Symbol']}): {row['Change (%)']:.2f}% change, Volume: {row['Volume']}")
+# Example usage of the progress bar functions
+if st.button("Fetch and Parse Securities"):
+    email = os.getenv('BOURSTAD_USERNAME')
+    password = os.getenv('BOURSTAD_PASSWORD')
+    stocks, suid, aut = fetch_and_parse_stocks(email, password)
+    if stocks:
+        fetch_stock_details_with_progress(stocks, suid, aut)
+        parse_all_stocks_with_progress('data/stocks')
+    else:
+        st.error("No stocks found or failed to fetch stocks.")
