@@ -1,3 +1,7 @@
 beautifulsoup4
 requests
 argparse
+python-dotenv
+yfinance
+streamlit
+pandas

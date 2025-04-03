@@ -1,0 +1,678 @@
+ID: , Name: Selectionner un titre
+ID: MMM:EGX, Name: 3M Corp.
+ID: VNP:CA, Name: 5N Plus
+ID: ABBV, Name: AbbVie Inc.
+ID: ADN:CA, Name: Acadian Timber Corp
+ID: ACN:EGX, Name: Accenture Plc
+ID: ADBE:EGX, Name: Adobe Inc.
+ID: AMD:EGX, Name: Advanced Micro Devices
+ID: AAV:CA, Name: Advantage Oil & Gas
+ID: AGF.B:CA, Name: AGF Management
+ID: A:EGX, Name: Agilent Technologies
+ID: AGIO:EGX, Name: Agios Pharmaceuticals Inc
+ID: AEM:CA, Name: Agnico Eagle Mines
+ID: AIM:CA, Name: Aimia
+ID: AC:CA, Name: Air Canada
+ID: ALK:EGX, Name: Alaska Air Group
+ID: ASTL:CA, Name: Algoma Steel Group Inc.
+ID: AQN:CA, Name: Algonquin Power & Utilities Corp.
+ID: BABA:EGX, Name: Alibaba Group Holding
+ID: ATD:CA, Name: Alimentation Couche-Tard Inc
+ID: MFI:CA, Name: Aliments Maple Leaf Inc.
+ID: ALA:CA, Name: AltaGas Ltd
+ID: ALS:CA, Name: Altius Minerals Corporation
+ID: AMZN:EGX, Name: Amazon.com
+ID: ABEV:EGX, Name: Ambev S.A.ADR
+ID: AAL:EGX, Name: American Airlines Group
+ID: AEP:EGX, Name: American Electric Power Company Inc.
+ID: AXP:EGX, Name: American Express
+ID: AIG:EGX, Name: American International Group
+ID: AMGN:EGX, Name: Amgen Inc.
+ID: ADW.A:CA, Name: Andrew Peller Ltd
+ID: AU:EGX, Name: AngloGold Ashanti Ltd
+ID: BUD:EGX, Name: Anheuser-Busch InBev
+ID: AAPL:EGX, Name: Apple
+ID: AMAT:EGX, Name: Applied Materials Inc.
+ID: MT:EGX, Name: Arcelor Mittal
+ID: ADM, Name: Archer-Daniels-Midland Company (ADM)
+ID: ATZ:CA, Name: Aritzia Inc. , actions subalternes
+ID: ASML:EGX, Name: ASML Holding N.V.
+ID: AZN:EGX, Name: AstraZeneca PLC
+ID: T:EGX, Name: AT&T
+ID: ACO.X:CA, Name: Atco Ltd
+ID: ATO:EGX, Name: Atmos Energy Corp
+ID: ATS:CA, Name: ATS Automation Tooling Systems Inc.
+ID: ACB:CA, Name: Aurora Cannabis Inc.
+ID: ACQ:CA, Name: AutoCanada Inc.
+ID: AYA:CA, Name: Aya Gold & Silver Inc.
+ID: AZUL, Name: Azul S.A.
+ID: BTO:CA, Name: B2Gold Corp.
+ID: BDGI:CA, Name: Badger Infrastructure Solutions Ltée
+ID: BIDU:EGX, Name: Baidu Inc.
+ID: BLDP:CA, Name: Ballard Power
+ID: BCH, Name: Banco de Chile ADR
+ID: SAN:EGX, Name: Banco Santander Central Hispano
+ID: BAC:EGX, Name: Bank of America
+ID: BK:EGX, Name: Bank of New York Mellon Corporation
+ID: CM:CA, Name: Banque cibc
+ID: BMO:CA, Name: Banque de Montréal
+ID: LB:CA, Name: Banque Laurentienne du Canada
+ID: NA:CA, Name: Banque Nationale
+ID: RY:CA, Name: Banque Royale
+ID: BNS:CA, Name: Banque Scotia
+ID: TD:CA, Name: Banque TD
+ID: BZUN:EGX, Name: Baozun Inc.
+ID: BCS:EGX, Name: Barclays PLC
+ID: ABX:CA, Name: Barrick Gold
+ID: BHC:CA, Name: Bausch Health (anc. Valeant Pharmaceuticals International, Inc)
+ID: BTE:CA, Name: Baytex Energy Corp.
+ID: BCE:CA, Name: BCE Inc.
+ID: ONC:EGX, Name: BeiGene Ltd.
+ID: BRK.B:EGX, Name: Berkshire Hathaway, catégorie B
+ID: BTG773:CA, Name: Beutel Goodman marché monétaire D
+ID: BYND:EGX, Name: Beyond Meat Inc.
+ID: BHP:EGX, Name: BHP Billiton Ltd.
+ID: BNTX:EGX, Name: BioNTech SE
+ID: RX:CA, Name: BioSyent Inc
+ID: BIRK, Name: Birkenstock Holding plc
+ID: BITF:CA, Name: Bitfarms Ltée
+ID: BB:CA, Name: Blackberry Ltd
+ID: BLK:EGX, Name: BlackRock Inc.
+ID: XYZ, Name: Block Inc. Class A
+ID: BA:EGX, Name: Boeing
+ID: BBD.B:CA, Name: Bombardier, catégorie B
+ID: BLX:CA, Name: Boralex
+ID: BPF.UN:CA, Name: Boston Pizza Royalties Income Fund
+ID: BSX:EGX, Name: Boston Scientific Corporation
+ID: BYD:CA, Name: Boyd Group Services Inc.
+ID: BP:EGX, Name: BP Plc
+ID: AVGO:EGX, Name: Broadcom Inc.
+ID: BN:CA, Name: Brookfield Corporation
+ID: BIPC:CA, Name: Brookfield Infrastructure Corporation, catégorie A
+ID: BEPC:CA, Name: Brookfield Renewable Corporation, catégorie A
+ID: BEP.UN:CA, Name: Brookfield Renewable Partners L.P.
+ID: DOO:CA, Name: BRP
+ID: BTB.UN:CA, Name: BTB Real Estate Investment Trust
+ID: IWF, Name: BTC iShares Russell 1000 Growth ETF
+ID: IWD, Name: BTC iShares Russell 1000 Value ETF
+ID: CAE:CA, Name: CAE
+ID: CGY:CA, Name: Calian Group Ltd.
+ID: CCO:CA, Name: Cameco Corporation
+ID: CF:CA, Name: Canaccord Genuity Group Inc.
+ID: GOOS:CA, Name: Canada Goose Holdings Inc., actions subalternes
+ID: CAR.UN:CA, Name: Canadian Apartment Properties REIT
+ID: CNQ:CA, Name: Canadian Natural Resources
+ID: CSIQ:EGX, Name: Canadian Solar Inc
+ID: CTC.A:CA, Name: Canadian Tire, catégorie A
+ID: CU:CA, Name: Canadian Utilities
+ID: CFP:CA, Name: Canfor Corporation
+ID: WEED:CA, Name: Canopy Growth Corporation
+ID: CPX:CA, Name: Capital Power Corp.
+ID: CS:CA, Name: Capstone Mining
+ID: CJT:CA, Name: Cargojet Inc
+ID: CUK, Name: Carnival Plc
+ID: CAS:CA, Name: Cascades
+ID: CAT:EGX, Name: Caterpillar Inc
+ID: CCL.B:CA, Name: CCL Industries Inc
+ID: CLS:CA, Name: Celestica Inc.
+ID: CX:EGX, Name: Cemex S.A.B. ADR
+ID: CVE:CA, Name: Cenovus Energy
+ID: GIB.A:CA, Name: CGI Group
+ID: CIA:CA, Name: Champion Iron Limited
+ID: CSH.UN:CA, Name: Chartwell Retirement Residences
+ID: CP:CA, Name: Chemin de fer Canadien Pacifique
+ID: CHE.UN:CA, Name: Chemtrade Logistics Income Fund
+ID: CVX:EGX, Name: Chevron
+ID: HTHT:EGX, Name: China Lodging Group Limited
+ID: CHR:CA, Name: Chorus Aviation Inc.
+ID: CIX:CA, Name: CI Financial
+ID: CGX:CA, Name: Cineplex Inc.
+ID: CSCO:EGX, Name: Cisco Systems
+ID: C:EGX, Name: Citigroup
+ID: CKI:CA, Name: Clarke Inc.
+ID: CLX, Name: Clorox Company
+ID: CNR:CA, Name: CN
+ID: CNH, Name: CNH Industrial N.V.
+ID: KO:EGX, Name: Coca Cola
+ID: CCA:CA, Name: Cogeco Cable
+ID: COIN:EGX, Name: Coinbase Global Inc.
+ID: CIGI:CA, Name: Colliers International Group Inc.
+ID: CMCSA:EGX, Name: Comcast
+ID: ELP, Name: Companhia Paranaense de Energia
+ID: COP:EGX, Name: ConocoPhillips
+ID: CSU:CA, Name: Constellation Software Inc
+ID: CTS:CA, Name: Converge Technology Solutions Corp.
+ID: CSCI:CA, Name: COSCIENS Biopharma Inc.
+ID: COST:EGX, Name: Costco Wholesale Corporation
+ID: CVO:CA, Name: Coveo Solutions Inc.
+ID: BAP, Name: Credicorp Ltd.
+ID: CRTO:EGX, Name: Criteo S.A.
+ID: CRE:CA, Name: Critical Element Corporation
+ID: CRR.UN:CA, Name: Crombie REIT
+ID: CVS, Name: CVS Health Corporation
+ID: DHI, Name: D.R. Horton Inc.
+ID: DHR, Name: Danaher Corporation
+ID: DQ:EGX, Name: DAQO New Energy Corp. ADS
+ID: DE:EGX, Name: Deere & Company
+ID: DFY:CA, Name: Definity Financial Corporation
+ID: DAL:EGX, Name: Delta Air Lines
+ID: DNTL:CA, Name: dentalcorp Holdings Ltée
+ID: DSG:CA, Name: Descartes Systems Group
+ID: DCP:CA, Name: Desjardins FNB Indice actions privilégiées canadiennes
+ID: DCG:CA, Name: Desjardins FNB Indice obligations canadiennes gouvernementales échelonnées 1-5 ans
+ID: DB:EGX, Name: Deutsche Bank AG
+ID: DRT:CA, Name: DIRTT Environmental Solutions Ltd.
+ID: DIS:EGX, Name: Disney
+ID: DMGI:CA, Name: DMG Blockchain Solutions Inc.
+ID: DCBO:CA, Name: Docebo Inc.
+ID: $AUDUSD, Name: Dollar australien
+ID: DG, Name: Dollar General Corporation
+ID: $USDCAD, Name: Dollar US
+ID: DOL:CA, Name: Dollarama
+ID: DBM:CA, Name: Doman Building Materials Group Ltd.
+ID: DASH:EGX, Name: DoorDash Inc.
+ID: DRM:CA, Name: DREAM Unlimited Corp., catégorie A
+ID: DHT.UN:CA, Name: DRI Healthcare Trust
+ID: DND:CA, Name: Dye & Durham Limited
+ID: DNG:CA, Name: Dynacor Gold Mines Inc.
+ID: ELF:CA, Name: E-L Financial Corporation Limitée
+ID: EMN, Name: Eastman Chemical Company
+ID: ETN, Name: Eaton Corporation PLC
+ID: EBAY:EGX, Name: eBay
+ID: ECO:CA, Name: EcoSynthetix Inc.
+ID: EDAP:EGX, Name: EDAP TMS S.A
+ID: EIX, Name: Edison International
+ID: ELD:CA, Name: Eldorado Gold Corporation
+ID: EA:EGX, Name: Electronic Arts Inc.
+ID: EFN:CA, Name: Element Fleet Management Corp
+ID: LLY, Name: Eli Lilly and Company
+ID: ERJ:EGX, Name: Embraer S.A.
+ID: EMA:CA, Name: Emera
+ID: EMP.A:CA, Name: Empire Company
+ID: ENB:CA, Name: Enbridge Inc.
+ID: WATT:EGX, Name: Energous Corporation
+ID: ENGH:CA, Name: Enghouse Systems
+ID: EQB:CA, Name: EQB Inc.
+ID: EQX:CA, Name: Equinox Gold Corp
+ID: ERO:CA, Name: Ero Copper Corp.
+ID: HACK, Name: ETFMG Prime Cyber Security
+ID: EPRX:CA, Name: Eupraxia Pharmaceuticals Inc.
+ID: $EURUSD, Name: Euro
+ID: EVNI:CA, Name: EV Nickel Inc.
+ID: ET:CA, Name: Evertz Technologies Limitée
+ID: EIF:CA, Name: Exchange Income Corporation
+ID: XTC:CA, Name: Exco Technologies Limited
+ID: EXE:CA, Name: Extendicare Inc.
+ID: XOM:EGX, Name: Exxon Mobil
+ID: META:EGX, Name: Facebook
+ID: FFH:CA, Name: Fairfax Financial Holdings
+ID: FDX:EGX, Name: Fedex
+ID: FCX, Name: Feeport_McMoran Inc
+ID: FRX:CA, Name: Fennec Pharmaceuticals Inc
+ID: FSZ:CA, Name: Fiera Capital
+ID: MFC:CA, Name: Financière Manuvie
+ID: SLF:CA, Name: Financière Sun Life
+ID: ZCS:CA, Name: FINB BMO obligations de sociétés à court terme
+ID: ZLC:CA, Name: FINB BMO obligations de sociétés à long terme
+ID: ZCM:CA, Name: FINB BMO obligations de sociétés à moyen terme
+ID: ZPS:CA, Name: FINB BMO obligations provinciales à court terme
+ID: ZPL:CA, Name: FINB BMO obligations provinciales à long terme
+ID: ZMP:CA, Name: FINB BMO obligations provinciales à moyen terme
+ID: FTT:CA, Name: Finning Int'l
+ID: CXF:CA, Name: First Asset Canadian Convertible Bond FNB Common
+ID: FLI:CA, Name: First Asset U.S. & Canada Lifeco Income ETF
+ID: FHYD:CA, Name: First Hydrogen Corp.
+ID: FM:CA, Name: First Quantum Minerals
+ID: FSV:CA, Name: FirstService Corp
+ID: FI, Name: Fiserv Inc.
+ID: TINF:CA, Name: FNB à gestion active d'actions d'infrastructures mondiales TD
+ID: TPRF:CA, Name: FNB à gestion active d’actions privilégiées TD
+ID: TGED:CA, Name: FNB à gestion active de dividendes bonifiés mondiaux TD
+ID: ZST:CA, Name: FNB BMO obligations à très court terme
+ID: ZWB:CA, Name: FNB BMO vente d'options d'achat couvertes de banques canadiennes
+ID: ZWU:CA, Name: FNB BMO vente d'options d'achat couvertes de services aux collectivités
+ID: ETHX.B:CA, Name: FNB d'Ethereum CI Galaxy
+ID: PSA:CA, Name: FNB d’épargne intérêt élevé Purpose
+ID: MKB:CA, Name: FNB de revenu fixe canadien de base plus Mackenzie
+ID: DCU:CA, Name: FNB Desjardins Indice univers obligations canadiennes
+ID: HMP:CA, Name: FNB Horizons Actif Obligations Municipales Canadiennes
+ID: VAB:CA, Name: FNB indiciel d'obligations totales canadiennes
+ID: VSB:CA, Name: FNB indiciel d’obligations canadiennes à court terme Vanguard
+ID: TDB3045:CA, Name: Fonds à faible volatilité canadien TD - D
+ID: RBF1460:CA, Name: Fonds à revenu de dividendes américain PH&N - D
+ID: TDB2372:CA, Name: Fonds alternatif de gestion du risque TD, catégorie D
+ID: NBC760:CA, Name: Fonds croissance Québec BNI série F
+ID: RBF1160:CA, Name: Fonds d'actions américaines PH&N - D
+ID: TDB3089:CA, Name: Fonds d'actions canadiennes TD - D
+ID: RBF1043:CA, Name: Fonds d'actions canadiennes Vision RBC - Série D
+ID: RBF1027:CA, Name: Fonds d'actions de croissance de sociétés américaines à moyenne capitalisation RBC, série D
+ID: RBF1076:CA, Name: Fonds d'actions japonaises RBC, série D
+ID: RBF1045:CA, Name: Fonds d'actions mondiales Vision RBC - Série D
+ID: TDB2231:CA, Name: Fonds d'actions nord-américaines de développement durable TD, catégorie D
+ID: MFC4629:CA, Name: Fonds d'obligations de sociétés Mackenzie Série D
+ID: RBF1090:CA, Name: Fonds d'obligations mondiales convertibles BlueBay (Canada), catégorie D
+ID: TDB3078:CA, Name: Fonds d'obligations ultra court terme TD - D
+ID: RBF1432:CA, Name: Fonds d’actions américaines à faible volatilité neutre en devises QUBE RBC - Série D
+ID: BTG774:CA, Name: Fonds d’actions américaines Beutel Goodman, catégorie D
+ID: BTG770:CA, Name: Fonds d’actions canadiennes Beutel Goodman, catégorie D
+ID: RBF1430:CA, Name: Fonds d’actions mondiales sans combustibles fossiles Vision RBC - Série D
+ID: RBF1010:CA, Name: Fonds d’obligations mondiales à rendement élevé RBC - Série D
+ID: TDB3533:CA, Name: Fonds de croissance équilibré TD - D
+ID: MFC4667:CA, Name: Fonds de petites capitalisations canadiennes Mackenzie Série D
+ID: NBC780:CA, Name: Fonds de revenu d'actions privilégiées BNI série F
+ID: TDB3535:CA, Name: Fonds des marchés émergents TD - D
+ID: DJT07162:CA, Name: Fonds Desjardins Actions américaines croissance – Devises neutres D
+ID: DJT07148:CA, Name: Fonds Desjardins Infrastructures mondiales, catégorie D
+ID: DJT07006:CA, Name: Fonds Desjardins Obligations canadiennes, catégorie D
+ID: DJT07165:CA, Name: Fonds Desjardins SociéTerre Actions canadiennes, catégorie D
+ID: DJT07177:CA, Name: Fonds Desjardins SociéTerre Diversité, catégorie D
+ID: MFC8454:CA, Name: Fonds européen Mackenzie Ivy, série D
+ID: NBC3702:CA, Name: Fonds Jarislowsky Fraser Sélect actions canadiennes BNI série F
+ID: TDB3014:CA, Name: Fonds mondial communications et divertissement TD ($US) - D
+ID: TDB2213:CA, Name: Fonds nord-américain équilibré de développement durable TD - D
+ID: NBC741:CA, Name: Fonds petite capitalisation BNI série F
+ID: TDB3098:CA, Name: Fonds science et technologie TD - D
+ID: OGD:CA, Name: Forage Orbit Garant Inc.
+ID: FOM:CA, Name: Foran Mining Corporation
+ID: F:EGX, Name: Ford Motor Company
+ID: FTS:CA, Name: Fortis Inc.
+ID: FVI:CA, Name: Fortuna Silver Mines Inc.
+ID: $CHFUSD, Name: Franc suisse
+ID: FNV:CA, Name: Franco Nevada
+ID: GMIN:CA, Name: G Mining Ventures Corp.
+ID: GLXY:CA, Name: Galaxy Digital Holdings Ltée
+ID: GH:CA, Name: Gamehost Inc
+ID: GAP, Name: Gap
+ID: GDI:CA, Name: GDI Services aux immeubles inc
+ID: GNRC, Name: Generac Holdings Inc.
+ID: GD:EGX, Name: General Dynamics Corporation
+ID: GE:EGX, Name: General Electric
+ID: GIS:EGX, Name: General Mills Inc
+ID: GM:EGX, Name: General Motors Company
+ID: WN:CA, Name: George Weston
+ID: GFL:CA, Name: GFL Environmental Inc.
+ID: GIL:CA, Name: Gildan, vêtements de sport
+ID: GILD:EGX, Name: Gilead Sciences
+ID: GPN, Name: Global Payments Inc.
+ID: PAVE:EGX, Name: Global X U.S. Infrastructure Development ETF
+ID: GSY:CA, Name: goeasy Limitée
+ID: GGD:CA, Name: GoGold Resources Inc.
+ID: GFI, Name: Gold Fields Limited
+ID: GS:EGX, Name: Goldmam Sachs
+ID: GEM, Name: Goldman Sachs ActiveBeta Emerging Markets Equity
+ID: GDL:CA, Name: Goodfellow Inc.
+ID: GOOG:EGX, Name: Google (Alphabet Inc)
+ID: GWO:CA, Name: Great-West
+ID: GPV:CA, Name: GreenPower Motor Company Inc.
+ID: DRX:CA, Name: Groupe ADF
+ID: GBT:CA, Name: Groupe BMTC
+ID: GCL:CA, Name: Groupe Colabor inc.
+ID: GRGD:CA, Name: Groupe Dynamite Inc, actions subalternes
+ID: MTY:CA, Name: Groupe MTY
+ID: TV, Name: Grupo Televisa S.A.
+ID: GCG.A:CA, Name: Guardian Capital Group Limitée,  catégorie A
+ID: TAN:EGX, Name: Guggenheim Solar ETF
+ID: GURU:CA, Name: GURU Organic Energy Corp.
+ID: HR.UN:CA, Name: H&R REIT
+ID: HPS.A:CA, Name: Hammond Power Solutions Inc., catégorie A
+ID: XLV, Name: Health Care Select Sector SPDR Fund
+ID: HSY, Name: Hershey Co
+ID: HLF:CA, Name: High Liner Foods Inc
+ID: HD:EGX, Name: Home Depot
+ID: HMC:EGX, Name: Honda Motors
+ID: HON:EGX, Name: Honeywell International
+ID: HSAV:CA, Name: Horizons Cash Maximizer ETF
+ID: HPQ:EGX, Name: HP Inc.
+ID: HSBC:EGX, Name: HSBC Holding
+ID: HUBB, Name: Hubbell Inc
+ID: HBM:CA, Name: Hudbay Minerals Inc.
+ID: HUT:CA, Name: Hut 8 Mining Corp.
+ID: H:CA, Name: Hydro One Ltée
+ID: IMG:CA, Name: IAMGOLD Corp
+ID: IBN:EGX, Name: ICICI Bank Limited
+ID: ILMN:EGX, Name: Illumina Inc.
+ID: IFX:CA, Name: Imaflex Inc.
+ID: IMAX, Name: IMAX Corp.
+ID: IMO:CA, Name: Imperial Oil Ltd
+ID: IAG:CA, Name: Industrielle Alliance assurance et services financiers Inc.
+ID: DII.B:CA, Name: Industries Dorel, catégorie B
+ID: LAS.A:CA, Name: Industries Lassonde, catégorie A
+ID: ISC:CA, Name: Information Services Corporation Class A
+ID: INFY:EGX, Name: Infosys
+ID: ING:EGX, Name: ING GROUP NV ADS.
+ID: INE:CA, Name: Innergex énergie renouvelable inc.
+ID: IFC:CA, Name: Intact Financial Corporation
+ID: INTC:EGX, Name: Intel Corp.
+ID: IBKR:EGX, Name: Interactive Brokers Group Inc.
+ID: IHG, Name: Intercontinental Hotels Group
+ID: IBM:EGX, Name: International Business Machine
+ID: IP:EGX, Name: International Paper Co
+ID: PFL:CA, Name: Invesco 1-3 Year Laddered Floating Rate Note Index ETF
+ID: ERTH:EGX, Name: Invesco Cleantech ETF
+ID: PICB, Name: Invesco International Corporate Bond ETF
+ID: PDBC:EGX, Name: Invesco Optimum Yield Diversified Commodity
+ID: RWL, Name: Invesco S&P 500 Revenue ETF
+ID: RWJ, Name: Invesco S&P SmallCap 600 Revenue ETF
+ID: DJP:EGX, Name: iPath Bloomberg Commodity Index Total Return ETN
+ID: XSTP:CA, Name: iShares 0-5 Year TIPS Bond Index ETF
+ID: CLG:CA, Name: iShares 1-10 Year Laddered Government Bond Index ETF
+ID: CBO:CA, Name: iShares 1-5 Year Laddered Corporate Bond Index ETF
+ID: CLF:CA, Name: iShares 1-5 Year Laddered Government Bond Index ETF
+ID: XSHU:CA, Name: iShares 1-5 Year U.S. IG Corporate Bond Index ETF
+ID: TIP:EGX, Name: iShares Barclays TIPS Bond Fund
+ID: XCB:CA, Name: iShares Cdn Corporate Bond Index FNB
+ID: XEG:CA, Name: iShares Cdn Energy Sector Index FNB
+ID: XGB:CA, Name: iShares Cdn Government Bond Index FNB
+ID: XCG:CA, Name: iShares Cdn Growth Index FNB
+ID: XIU:CA, Name: iShares Cdn Large Cap  60 Index FNB
+ID: XLB:CA, Name: iShares Cdn Long Bond Index FNB
+ID: XSU:CA, Name: iShares Cdn Russel 2000 Index FNB
+ID: XSP:CA, Name: iShares Cdn S&P 500 Index Fund
+ID: XSB:CA, Name: iShares CDN Short Bond Index FNB
+ID: XIT:CA, Name: iShares Cdn Tech Sector Index FNB
+ID: XCV:CA, Name: iShares Cdn Value Index FNB
+ID: XSH:CA, Name: iShares Core Canadian Short Term Corporate Bond Index ETF
+ID: XBB:CA, Name: iShares Core Canadian Universe Bond Index FNB
+ID: XRB:CA, Name: iShares DEX Real Return Bond Index FNB
+ID: LEMB:EGX, Name: iShares Emerging Markets Local Currency Bond FNB
+ID: XSHG:CA, Name: iShares ESG Advanced 1-5 Year Canadian Corporate Bond Index ETF
+ID: XESG:CA, Name: iShares ESG Aware MSCI Canada Index ETF
+ID: XSAB:CA, Name: iShares ESG Canadian Aggregate Bond Index ETF
+ID: FXI:EGX, Name: iShares FTSE/Xinhua China 25 Index Fund
+ID: ARTY, Name: iShares Future AI & Tech ETF
+ID: COW:CA, Name: iShares Global Agriculture Index ETF
+ID: XHC:CA, Name: iShares Global Healthcare Index ETF (CAD-Hedged)
+ID: XEB:CA, Name: iSHARES J.P. Morgan USD Emerging Markets Bond Index FNB (CAD-Hedged)
+ID: XIN:CA, Name: iShares MSCI EAFE Index Fund (CAD-Hedged) FNB
+ID: XMV:CA, Name: iShares MSCI Min Vol Canada Index ETF
+ID: EWY:EGX, Name: iShares MSCI South Korea
+ID: EWT:EGX, Name: iShares MSCI Taiwan
+ID: EWA:EGX, Name: iShares MSCI-Australia
+ID: EWQ:EGX, Name: iShares MSCI-France
+ID: EWG:EGX, Name: iShares MSCI-Germany
+ID: EWH:EGX, Name: iShares MSCI-Hong Kong
+ID: EWJ:EGX, Name: iShares MSCI-Japan
+ID: EWW:EGX, Name: iShares MSCI-Mexico
+ID: EWP:EGX, Name: iShares MSCI-Spain
+ID: EWU:EGX, Name: iShares MSCI-United Kingdom
+ID: XQQ:CA, Name: iShares NASDAQ 100 Index ETF (CAD-Hedged)
+ID: CMR:CA, Name: iShares Premium Money Market ETF
+ID: WOOD:EGX, Name: iShares S&P Global Timber & Forestry Index Fund
+ID: CDZ:CA, Name: iShares S&P/TSX Canadian Dividend Aristocrats FNB
+ID: XHY:CA, Name: iShares U.S. High Yield Bond Index FNB (CAD-Hedged)
+ID: XIG:CA, Name: iShares U.S. IG Corporate Bond Index FNB (CAD-Hedged)
+ID: CLU:AQL, Name: iShares US Fundamental Index FNB
+ID: JBHT:EGX, Name: J.B. Hunt Transport Services Inc.
+ID: JWEL:CA, Name: Jamieson Wellness Inc.
+ID: JD:EGX, Name: JD.com Inc.
+ID: JNJ:EGX, Name: Johnson and Johnson
+ID: JPM:EGX, Name: JPMorgan Chase
+ID: JPEM, Name: JPMorgan Diversified Return Emerging Markets Equity
+ID: KNT:CA, Name: K92 Mining Inc.
+ID: KB, Name: KB Financial Group Inc
+ID: KEG.UN:CA, Name: Keg Royalties Income Fund (The) Units
+ID: K:EGX, Name: Kellog
+ID: KDP:EGX, Name: Keurig Dr Pepper Inc.
+ID: KMP.UN:CA, Name: Killam Apartment Real Estate Investment Trust
+ID: KXS:CA, Name: Kinaxis Inc.
+ID: KITS:CA, Name: Kits Eyecare Ltd
+ID: PHG, Name: Koninklijke Philips N.V.
+ID: KHC:EGX, Name: Kraft Heinz Company
+ID: PNG:CA, Name: Kraken Robotics Inc.
+ID: KHYB, Name: KraneShares Asia Pacific High Income Bond ETF
+ID: LIF:CA, Name: Labrador Iron Ore Royalty Corporation
+ID: QBTC:CA, Name: Le fonds Bitcoin
+ID: LDTC:EGX, Name: Leddartech Holdings Inc.
+ID: LNF:CA, Name: Leons Furniture Ltd
+ID: LEVI, Name: Levi Strauss & Co.
+ID: LPL, Name: LG Display Co Ltd
+ID: LSPD:CA, Name: Lightspeed POS Inc.
+ID: LNR:CA, Name: Linamar Corporation
+ID: LIN:EGX, Name: Linde plc
+ID: $GBPUSD, Name: Livre Sterling
+ID: ERIC:EGX, Name: LM Ericsson
+ID: L:CA, Name: Loblaw
+ID: LOGI:EGX, Name: Logitech International S.A.
+ID: LOOP:EGX, Name: Loop Industries Inc.
+ID: LOW, Name: Lowe's Companies Inc.
+ID: LUMN, Name: Lumen Technologies Inc.
+ID: LUG:CA, Name: Lundin Gold Inc.
+ID: LUN:CA, Name: Lundin Mining Corp
+ID: LYB, Name: LyondellBasell Industries NV Class A
+ID: MSGS, Name: Madison Square Garden Sports Corp., catégorie A
+ID: MAG:CA, Name: MAG Silver
+ID: MAL:CA, Name: Magellan Aerospace Corporation
+ID: MG:CA, Name: Magna International
+ID: MEQ:CA, Name: Mainstreet Equity Corp.
+ID: MANU:EGX, Name: Manchester United
+ID: MARA:EGX, Name: Marathon Digital Holdings Inc.
+ID: FOOD:CA, Name: Marché Goodfood Corp.
+ID: MLM, Name: Martin Marietta Materials
+ID: MRE:CA, Name: Martinrea International Inc.
+ID: MA:EGX, Name: Mastercard
+ID: MCD:EGX, Name: McDonald
+ID: MDA:CA, Name: MDA Ltd.
+ID: MDP:CA, Name: Medexus Pharmaceuticals Inc.
+ID: MDT, Name: Medtronic plc.
+ID: MRD:CA, Name: Melcor Developments Ltd.
+ID: MRK:EGX, Name: Merck & Co
+ID: MX:CA, Name: Methanex Corporation
+ID: MET:EGX, Name: MetLife Inc
+ID: MRU:CA, Name: Metro inc.
+ID: MU:EGX, Name: Micron Technology Inc.
+ID: MSFT:EGX, Name: Microsoft
+ID: MUFG, Name: Mitsubishi UFJ Financial Group Inc.
+ID: MFG, Name: Mizuho Financial Group Inc.
+ID: MRNA:EGX, Name: Moderna Inc.
+ID: TPX.B:CA, Name: Molson Coors Canada Inc., cat. B
+ID: MNT:CA, Name: Monnaie Royale du Canada - Réserve d'or
+ID: MCO, Name: Moody's Corporation
+ID: MSCI, Name: MSCI Inc
+ID: MTL:CA, Name: Mullen Group Ltd
+ID: GRA:CA, Name: NanoXplore Inc.
+ID: NFLX:EGX, Name: Netflix
+ID: NYT, Name: New York Times
+ID: NEM:EGX, Name: Newmont Mining Corp Holding Co
+ID: NEE, Name: NextEra Energy Inc.
+ID: NFI:CA, Name: NFI Group Inc.
+ID: NIO, Name: NIO Inc.
+ID: NOK:EGX, Name: Nokia Corp
+ID: NMR, Name: Nomura Holdings Inc
+ID: NPI:CA, Name: Northland Power Inc.
+ID: NOC:EGX, Name: Northrop Grumman Corp Holding Co
+ID: NWH.UN:CA, Name: NorthWest Healthcare Properties REIT
+ID: NOU:CA, Name: Nouveau Monde Graphite Inc.
+ID: NVS:EGX, Name: Novartis
+ID: NVO:EGX, Name: Novo Nordisk A/S
+ID: NUE, Name: Nucor Corporation
+ID: NTR:CA, Name: Nutrien Ltd
+ID: NVDA:EGX, Name: NVIDIA Corporation
+ID: ONEX:CA, Name: Onex Corp.
+ID: OTEX:CA, Name: Open Text Corp
+ID: ORCL:EGX, Name: Oracle
+ID: OGI:CA, Name: OrganiGram Holdings Inc
+ID: OR:CA, Name: Osisko redevances aurifères
+ID: PLTR:EGX, Name: Palantir Technologies Inc. Class A
+ID: PMET:CA, Name: Patriot Battery Metals Inc.
+ID: PYPL:EGX, Name: PayPal Holdings
+ID: PPL:CA, Name: Pembina Pipeline
+ID: PNR, Name: Pentair plc.
+ID: PEP:EGX, Name: PepsiCo
+ID: PET:CA, Name: Pet Valu Holdings Ltd.
+ID: PBR, Name: Petroleo Brasileiro S.A.- Petrobras
+ID: PEY:CA, Name: Peyto Exploration & Development
+ID: PFE:EGX, Name: Pfizer
+ID: PM:EGX, Name: Philip Morris International
+ID: PHX:CA, Name: PHX Energy Services Corp
+ID: PLL:EGX, Name: Piedmont Lithium Limited
+ID: MINT:EGX, Name: PIMCO Enhanced Short Maturity Strategy Fund
+ID: PDD:EGX, Name: Pinduoduo Inc.
+ID: PLZ.UN:CA, Name: Plaza Retail REIT
+ID: PIF:CA, Name: Polaris Infrastructure Inc.
+ID: PBL:CA, Name: Pollard Banknote Limited
+ID: MFC5302:CA, Name: Portefeuille du fonds - Fonds toutes actions Chine Mackenzie Série D
+ID: TGRO:CA, Name: Portefeuille FNB En un clic TD – audacieux
+ID: TBAL:CA, Name: Portefeuille FNB En un clic TD – modéré
+ID: PKX, Name: POSCO
+ID: POW:CA, Name: Power Corporation du Canada
+ID: PPA:EGX, Name: PowerShares Aerospace & Defense Portfolio
+ID: PCY:EGX, Name: PowerShares Emerging Markets Sovereign Debt
+ID: QQQ:EGX, Name: Powershares QQQ
+ID: PBW:EGX, Name: PowerShares Wilderhill Clean Energy Portfolio
+ID: PD:CA, Name: Precision Drilling
+ID: PBH:CA, Name: Premium Brands Holdings Corporation
+ID: PG:EGX, Name: Procter & Gamble
+ID: PRL:CA, Name: Propel Holdings Inc.
+ID: BITO:EGX, Name: ProShares Bitcoin Strategy ETF
+ID: PYR:CA, Name: PyroGenesis Canada Inc
+ID: QCOM:EGX, Name: Qualcomm
+ID: PWR, Name: Quanta Services Inc.
+ID: QTRH:CA, Name: Quarterhill Inc.
+ID: QBR.B:CA, Name: Quebecor Inc
+ID: RCH:CA, Name: Quincaillerie Richelieu
+ID: RYN, Name: Rayonier Inc. REIT
+ID: QSR:CA, Name: Restaurant Brands International (Tim Horton/Burger King)
+ID: RIOT:EGX, Name: Riot Blockchain Inc.
+ID: RBA:CA, Name: Ritchie Bros. Auctioneers Inc
+ID: HOOD:EGX, Name: Robinhood Markets Inc.
+ID: RCI.B:CA, Name: Rogers Communications, cat. B
+ID: RSI:CA, Name: Rogers Sugar Inc.
+ID: ROOT:CA, Name: Roots Corporation
+ID: ROP:EGX, Name: Roper Technologies Inc.
+ID: RCL, Name: Royal Caribbean Cruises Ltd.
+ID: SHEL, Name: Royal Dutch Shell
+ID: NWG, Name: RoyaNatWest Group (Royal Bank of Scotland)
+ID: RUS:CA, Name: Russel Metals
+ID: RYAAY:EGX, Name: Ryanair Holdings plc ADR
+ID: SPY:EGX, Name: S&P 500 Dep. R. (unités de l'indice s&p)
+ID: XLY:EGX, Name: S&P Consumer Discretionary sector SPDR
+ID: XLP:EGX, Name: S&P Consumer Staples sector SPDR
+ID: XLE:EGX, Name: S&P Energy sector SPDR
+ID: XLF:EGX, Name: S&P Financials sector SPDR
+ID: XLI:EGX, Name: S&P Industrial sector SPDR
+ID: XLK:EGX, Name: S&P Technology sector SPDR
+ID: XLU:EGX, Name: S&P Utilities sector SPDR
+ID: SNY:EGX, Name: Sanofi Aventis
+ID: SAP:EGX, Name: SAP AG
+ID: SAP:CA, Name: Saputo
+ID: SIS:CA, Name: Savaria Corporation
+ID: SLB:EGX, Name: Schlumberger
+ID: SE, Name: Sea Limited
+ID: NOW, Name: ServiceNow Inc.
+ID: MATR:CA, Name: Shawcor Ltd
+ID: SHOP:CA, Name: Shopify Inc., catégorie A
+ID: SIA:CA, Name: Sienna Senior Living Inc.
+ID: SGML:CA, Name: Sigma Lithium Corporation
+ID: SVM:CA, Name: Silvercorp Metals Inc
+ID: FUN, Name: Six Flags Entreprises Corp
+ID: SKE:CA, Name: Skeena Resources Limited
+ID: SRU.UN:CA, Name: Smart Real Estate Investment Trust
+ID: ATRL:CA, Name: SNC-Lavalin, catégorie A
+ID: SQM, Name: Sociedad Quimica y Minera S.A.
+ID: IGM:CA, Name: Société Financière IGM
+ID: SEDG:EGX, Name: SolarEdge Technologies Inc.
+ID: SGI:EGX, Name: Somnigroup International Inc.(précédemment Tempur Sealy International Inc.)
+ID: SONY:EGX, Name: Sony
+ID: LUV:EGX, Name: Southwest Airlines
+ID: BWX:EGX, Name: SPDR Barclays Capital International Treasury Bond
+ID: SRLN:EGX, Name: SPDR Blackstone Senior Loan ETF
+ID: BIL:EGX, Name: SPDR Bloomberg 1-3 Month T-Bill ETF
+ID: WIP:EGX, Name: SPDR DB International Government Inflation-Protected Bond
+ID: GLD:EGX, Name: SPDR Gold Trust
+ID: KRE:EGX, Name: SPDR KBW Regional Banking
+ID: SHE:EGX, Name: SPDR Series Trust SSGA Gender Diversity Index
+ID: SII:CA, Name: Sprott Inc.
+ID: STN:CA, Name: Stantec Inc
+ID: SBUX:EGX, Name: Starbucks Corp.
+ID: SJ:CA, Name: Stella-Jones
+ID: STLA, Name: Stellantis N.V.
+ID: STRL:EGX, Name: Sterling Infrastructure Inc.
+ID: RAY.A:CA, Name: Stingray Digital Group Inc
+ID: STM, Name: STMicroelectronics N.V.
+ID: STNE:EGX, Name: StoneCo Ltd.
+ID: SVI:CA, Name: StorageVault Canada Inc.
+ID: SU:CA, Name: Suncor Energy
+ID: SOY:CA, Name: SunOpta Inc.
+ID: SPB:CA, Name: Superior Plus Corp.
+ID: SXP:CA, Name: Supremex Inc.
+ID: NILI:CA, Name: Surge Battery Metals Inc.
+ID: PWI:CA, Name: Sustainable Power & Infrastructure Split Corp.
+ID: HAI:CA, Name: Systèmes Haivision inc.
+ID: TSM:EGX, Name: Taiwan Semiconductor Manufacturing Company Ltd.
+ID: TAK, Name: Takeda Pharmaceutical Company Limited
+ID: TEL, Name: TE Connectivity Ltd.
+ID: TECK.B:CA, Name: Teck Ressources, catégorie B
+ID: TCS:CA, Name: Tecsys
+ID: TEO, Name: Telecom Argentina SA
+ID: TSAT:CA, Name: Telesat Corporation
+ID: T:CA, Name: Telus
+ID: TIXT:CA, Name: TELUS International (Cda) Inc.
+ID: TME, Name: Tencent Music Entertainment Group
+ID: TSLA:EGX, Name: Tesla Inc
+ID: NWC:CA, Name: The North West Company Inc.
+ID: WED:CA, Name: The Westaim Corporation
+ID: GUD:CA, Name: Thérapeutique Knight
+ID: TH:CA, Name: Theratechnologies Inc.
+ID: TMO, Name: Thermo Fisher Scientific Inc
+ID: THNC:CA, Name: Thinkific Labs Inc.
+ID: TRI:CA, Name: Thomson Reuters
+ID: LCFS:CA, Name: Tidewater Renewables Ltd.
+ID: X:CA, Name: TMX Group
+ID: TIH:CA, Name: Toromont Industries Ltd.
+ID: TTE, Name: Total SA
+ID: TOU:CA, Name: Tourmaline Oil Corp.
+ID: TM:EGX, Name: Toyota
+ID: TPIC:EGX, Name: TPI Composites Inc.
+ID: TRP:CA, Name: Trans Canada Corp
+ID: TA:CA, Name: TransAlta Corporation
+ID: TRZ:CA, Name: Transat AT (Air)
+ID: TCL.A:CA, Name: Transcontinental inc
+ID: TFII:CA, Name: Transforce inc.
+ID: TSU:CA, Name: Trisura Group Ltd.
+ID: TC:CA, Name: Tucows Inc.
+ID: UBER, Name: Uber Technologies Inc.
+ID: UBS:EGX, Name: UBS AG
+ID: UL:EGX, Name: Unilever
+ID: UNP:EGX, Name: Union Pacific Corp
+ID: UPS:EGX, Name: United Parcel Service
+ID: UNH, Name: UnitedHealth Group Incorporated
+ID: X:EGX, Name: US Steel Corp
+ID: MTN, Name: Vail Resorts Inc.
+ID: VALE:EGX, Name: Vale S. A.
+ID: CBON, Name: VanEck China Bond ETF
+ID: GRNB, Name: VanEck Green Bond ETF
+ID: EDV:EGX, Name: Vanguard Extended Duration Treasuries Index ETF
+ID: VRIF:CA, Name: Vanguard Retirement Income ETF Portfolio
+ID: BND:EGX, Name: Vanguard Total Bond Market Index Fund
+ID: BNDX:EGX, Name: Vanguard Total International Bond ETF
+ID: VLN:CA, Name: Velan Inc.
+ID: VRN:CA, Name: Veren Inc.
+ID: VZ:EGX, Name: Verizon Communications
+ID: FORA:CA, Name: VerticalScope Holdings Inc.
+ID: V:EGX, Name: Visa
+ID: VC:EGX, Name: Visteon Corporation
+ID: VOD:EGX, Name: Vodaphone
+ID: WJX:CA, Name: Wajax Corporation
+ID: WFC:CA, Name: Wall Financial Corp.
+ID: WMT:EGX, Name: WalMart
+ID: WRBY, Name: Warby Parker Inc. Class A
+ID: WCN:CA, Name: Waste Connections
+ID: W, Name: Wayfair Inc.
+ID: WB:EGX, Name: Weibo Corporation
+ID: WELL:CA, Name: WELL Health Technologies Corp.
+ID: WFC:EGX, Name: Wells Fargo
+ID: WFG:CA, Name: West Fraser Timber
+ID: WU, Name: Western Union Company
+ID: WPRT:CA, Name: Westport Fuel Systems Inc.
+ID: WTE:CA, Name: Westshore Terminals Investment Corporation
+ID: WPM:CA, Name: Wheaton Precious Metals
+ID: WILD:CA, Name: Wildbrain Ltd.
+ID: WCM.A:CA, Name: Wilmington Capital Management (Class A)
+ID: WPK:CA, Name: Winpak Ltd
+ID: WSP:CA, Name: WSP Global inc
+ID: XRX:EGX, Name: Xerox Corporation
+ID: XYL, Name: Xylem Inc. New
+ID: Y:CA, Name: Yellow Media inc.
+ID: $JPYUSD, Name: Yen
+ID: YUMC, Name: Yum China Holdings Inc.
+ID: ZM:EGX, Name: Zoom Video Communications Inc.
