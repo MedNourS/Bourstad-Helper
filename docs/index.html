@@ -55,11 +55,41 @@
         <h2>Setup</h2>
         <p>To get started, follow the steps below:</p>
         <ol>
+            <li>Ensure you have Python 3.8 or higher installed on your system.</li>
             <li>Clone the repository: <code>git clone https://github.com/your-username/Bourstad-Helper.git</code></li>
+            <li>Navigate to the project directory: <code>cd Bourstad-Helper</code></li>
+            <li>Create a virtual environment: <code>python -m venv env</code></li>
+            <li>Activate the virtual environment:
+                <ul>
+                    <li>On Windows: <code>env\Scripts\activate</code></li>
+                    <li>On macOS/Linux: <code>source env/bin/activate</code></li>
+                </ul>
+            </li>
             <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
             <li>Run the Streamlit app locally: <code>streamlit run bourstad/dashboard.py</code></li>
         </ol>
-        <p>Alternatively, you can access the hosted dashboard directly using the link below.</p>
+        <p>Alternatively, you can host the dashboard using GitHub Pages and port forwarding:</p>
+        <ol>
+            <li>Ensure the repository is public on GitHub.</li>
+            <li>Push your changes to the <code>gh-pages</code> branch:
+                <ul>
+                    <li>Install the <code>ghp-import</code> tool: <code>pip install ghp-import</code></li>
+                    <li>Build the static files for the dashboard: <code>streamlit run bourstad/dashboard.py --server.port 8501</code></li>
+                    <li>Run <code>ghp-import -n -p -f dashboard_output_directory</code> to deploy to GitHub Pages.</li>
+                </ul>
+            </li>
+            <li>Enable GitHub Pages in the repository settings and set the source to the <code>gh-pages</code> branch.</li>
+            <li>Access the dashboard at <code>https://your-username.github.io/Bourstad-Helper</code>.</li>
+        </ol>
+
+        <h2>Troubleshooting</h2>
+        <p>If you encounter issues during setup, consider the following:</p>
+        <ul>
+            <li>Ensure all dependencies are installed correctly by running <code>pip list</code>.</li>
+            <li>Check if Streamlit is installed by running <code>streamlit --version</code>.</li>
+            <li>Verify that your Python version is compatible (3.8 or higher).</li>
+            <li>Consult the <a href="https://docs.streamlit.io/" target="_blank">Streamlit documentation</a> for additional help.</li>
+        </ul>
 
         <h2>Learn More</h2>
         <p>Visit the <a href="https://github.com/your-username/Bourstad-Helper" target="_blank">GitHub repository</a> for more details.</p>
